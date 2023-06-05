@@ -21,25 +21,26 @@ public class TelaInicial {
 
 
         switch (opcaoInicial) {
-            case 1:
+            case 1 -> {
                 TelaContaCorrente telaContaCorrente = new TelaContaCorrente();
                 telaContaCorrente.contaCorrente();
-                break;
-            case 2:
+            }
+            case 2 -> {
                 TelaContaPoupanca telaContaPoupanca = new TelaContaPoupanca();
                 telaContaPoupanca.contaPoupanca();
-                break;
-            case 3:
+            }
+            case 3 -> {
                 System.out.println(" ====================================== ");
                 System.out.println("|-------------VOLTE SEMPRE-------------|");
                 System.out.println(" ====================================== ");
                 System.exit(0);
-            default:
+            }
+            default -> {
                 System.out.println(" ====================================== ");
                 System.out.println("|---------!!!OPÇÃO INVÁLIDA!!!---------|");
                 System.out.println(" ====================================== ");
                 inicial();
-                break;
+            }
         }
     }
 

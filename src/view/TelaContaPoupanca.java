@@ -29,42 +29,42 @@ public class TelaContaPoupanca {
         int opcao = entrada.nextInt();
 
         switch (opcao) {
-            case 1:
+            case 1 -> {
                 contaPoupanca.telaSaque();
                 double valorSaque = entrada.nextDouble();
                 contaPoupanca.sacar(valorSaque);
                 contaPoupanca();
-                break;
-            case 2:
+            }
+            case 2 -> {
                 contaPoupanca.telaDeposito();
                 double valorDeposito = entrada.nextDouble();
                 contaPoupanca.depositar(valorDeposito);
                 contaPoupanca();
-                break;
-            case 3:
+            }
+            case 3 -> {
                 contaPoupanca.transferir();
                 contaPoupanca();
-                break;
-            case 4:
+            }
+            case 4 -> {
                 contaPoupanca.mostrarSaldo();
                 contaPoupanca();
-                break;
-            case 5:
+            }
+            case 5 -> {
                 TelaInicial telaInicial = new TelaInicial();
                 telaInicial.inicial();
-                break;
-            case 6:
+            }
+            case 6 -> {
                 System.out.println(" ====================================== ");
                 System.out.println("|-------------VOLTE SEMPRE-------------|");
                 System.out.println(" ====================================== ");
                 System.exit(0);
-                break;
-            default:
+            }
+            default -> {
                 System.out.println(" ====================================== ");
                 System.out.println("|---------!!!OPÇÃO INVÁLIDA!!!---------|");
                 System.out.println(" ====================================== ");
                 contaPoupanca();
-                break;
+            }
         }
     }
 }

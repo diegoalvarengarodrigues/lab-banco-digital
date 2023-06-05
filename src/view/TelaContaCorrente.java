@@ -33,41 +33,42 @@ public class TelaContaCorrente {
 
 
         switch (opcao) {
-            case 1:
+            case 1 -> {
                 contaCorrente.telaSaque();
                 double valorSaque = entrada.nextDouble();
                 contaCorrente.sacar(valorSaque);
                 contaCorrente();
-                break;
-            case 2:
+            }
+            case 2 -> {
                 contaCorrente.telaDeposito();
                 double valorDeposito = entrada.nextDouble();
                 contaCorrente.depositar(valorDeposito);
                 contaCorrente();
-                break;
-            case 3:
+            }
+            case 3 -> {
                 contaCorrente.transferir();
                 contaCorrente();
-                break;
-            case 4:
+            }
+            case 4 -> {
                 contaCorrente.mostrarSaldo();
                 contaCorrente();
-                break;
-            case 5:
+            }
+            case 5 -> {
                 TelaInicial telaInicial = new TelaInicial();
                 telaInicial.inicial();
-                break;
-            case 6:
+            }
+            case 6 -> {
                 System.out.println(" ====================================== ");
                 System.out.println("|-------------VOLTE SEMPRE-------------|");
                 System.out.println(" ====================================== ");
                 System.exit(0);
-            default:
+            }
+            default -> {
                 System.out.println(" ====================================== ");
                 System.out.println("|---------!!!OPÇÃO INVÁLIDA!!!---------|");
                 System.out.println(" ====================================== ");
                 contaCorrente();
-                break;
+            }
         }
     }
 }
