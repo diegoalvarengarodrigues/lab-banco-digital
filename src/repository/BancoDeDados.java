@@ -9,7 +9,7 @@ import java.util.List;
 
 public class BancoDeDados {
 
-    public List<Cliente> ArrayList;
+    //public List<Cliente> ArrayList;
     public List<Cliente> clientes = new ArrayList<>();
     public static List<Conta> contas = new ArrayList<>();
 

@@ -15,7 +15,7 @@ public class Conta {
 
 
 
-    public Conta() {}
+    //public Conta() {}
 
     public Conta(Cliente cliente) {
         this.agencia = Conta.AGENCIA_PADRAO;
@@ -24,7 +24,7 @@ public class Conta {
 
     }
 
-    //Métdo para ação de depositar
+    //Método para ação de depositar
     public void depositar(double valor) {
         if(valor > 0) {
             setSaldo(this.saldo + valor);
@@ -33,13 +33,6 @@ public class Conta {
             System.out.println("Não foi possível realizar o depósito");
         }
     }
-    public void telaDeposito() {
-        System.out.println("|======================================|");
-        System.out.println("|     QUAL VALOR DESEJA DEPOSITAR ?    |");
-        System.out.println("|======================================|");
-
-    }
-
 
 
     //Método para a ação de sacar
@@ -56,11 +49,11 @@ public class Conta {
     public void transferir() {
 
         listarContas();
-        telaTransferir1();
+        telaTransferirConta();
         Scanner input = new Scanner(System.in);
         int numeroContaDestino = input.nextInt();
         Conta contaDestino = encontrarConta(numeroContaDestino);
-        telaTransferir();
+        telaTransferirValor();
         Double valor = input.nextDouble();
 
         if(valor > 0 && this.getSaldo() >= valor) {
@@ -73,6 +66,7 @@ public class Conta {
         //listarContas();
     }
 
+    //Método para encontrar a conta no Banco de Dados atrvés do numero da conta
     private static Conta encontrarConta(int contaDestino) {
         Conta conta = null;
         if(BancoDeDados.contas.size() > 0) {
@@ -85,6 +79,7 @@ public class Conta {
         return conta;
     }
 
+    //Metodo usado para listar as contas do Banco de Dados para exemplificar a funcionalidade do método de transferir.
     public void listarContas() {
         if (BancoDeDados.contas.size() > 0) {
             for (Conta conta : BancoDeDados.contas) {
@@ -96,14 +91,15 @@ public class Conta {
     }
 
 
-    public void telaTransferir() {
+    public void telaTransferirValor() {
         System.out.println("|======================================|");
         System.out.println("|     QUAL VALOR DESEJA TRANSFERIR ?   |");
         System.out.println("|======================================|");
     }
-    public void telaTransferir1() {
+    public void telaTransferirConta() {
         System.out.println("|======================================|");
         System.out.println("|     PARA QUEM DESEJA TRANSFERIR ?    |");
+        System.out.println("|       Digite o número da conta       |");
         System.out.println("|======================================|");
     }
     public void mostrarSaldo(){
@@ -116,7 +112,12 @@ public class Conta {
         System.out.println("|       QUAL VALOR DESEJA SACAR ?      |");
         System.out.println("|======================================|");
     }
+    public void telaDeposito() {
+        System.out.println("|======================================|");
+        System.out.println("|     QUAL VALOR DESEJA DEPOSITAR ?    |");
+        System.out.println("|======================================|");
 
+    }
 
 
 
